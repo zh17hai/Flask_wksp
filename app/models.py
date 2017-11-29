@@ -78,6 +78,7 @@ class Preview(db.Model):
     id = db.Column(db.Integer, primary_key=True)  # 编号
     title = db.Column(db.String(225), unique=True)  # 标题
     logo = db.Column(db.String(225), unique=True)  # 封面
+    addtime = db.Column(db.DateTime, index=True, default=datetime.now)
 
     def __repr__(self):
         return "Preview %r" % self.title
